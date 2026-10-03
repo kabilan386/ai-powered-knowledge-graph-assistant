@@ -1,0 +1,6 @@
+Platform Team manages Payment Service.
+Payment Service uses Redis for caching.
+Redis is hosted on AWS ElastiCache.
+Payment Service depends on PostgreSQL.
+Analytics Team manages Analytics Service.
+Analytics Service uses Neo4j.

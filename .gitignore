@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+node_modules/
+.next/
+coverage/
+uploads/
+data/
+*.tsbuildinfo
+# Live evaluation outputs may contain private source excerpts.
+evaluation/runs/

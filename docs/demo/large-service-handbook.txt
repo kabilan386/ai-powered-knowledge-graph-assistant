@@ -1,0 +1,324 @@
+SYNTHETIC MCA TEST DATA: SERVICE ARCHITECTURE HANDBOOK
+
+All teams, policies, service arrangements, owners and operational details below are fictional test fixtures. The document contains no API keys, credentials, real customers, personal records or production secrets. Technology names describe this fictional system. No founder, CEO or company founding date is specified.
+
+Use this document to exercise many-chunk ingestion, embeddings, knowledge extraction, semantic retrieval, multi-hop paths and citations. It is not an evaluation result or evidence of application quality.
+
+
+CHAPTER 1: PAYMENT SERVICE
+
+Platform Team manages Payment Service. Payment Service uses Redis for caching. Redis is hosted on AWS ElastiCache. Payment Service stores its transactional records in PostgreSQL. Payment Service depends on Billing Service.
+
+Payment Service is part of the Meridian Demo Platform. Platform Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Payment Service.
+
+Payment Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Payment Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Payment Service is governed by the Payment Service Runbook. Platform Team manages the Payment Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Payment Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Payment Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Payment Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Payment Service uses Redis. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to PostgreSQL. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Platform Team reviews the operational dependencies of Payment Service. The direct dependency named in this chapter is Billing Service. Other services may depend on Payment Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Payment Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Platform Team manages Payment Service; Payment Service uses Redis for caching; Redis is hosted on AWS ElastiCache; Payment Service stores transactional records in PostgreSQL; and Payment Service depends on Billing Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 2: CUSTOMER SERVICE
+
+Customer Team manages Customer Service. Customer Service uses Memcached for caching. Memcached is hosted on AWS EC2. Customer Service stores its transactional records in MySQL. Customer Service depends on Identity Service.
+
+Customer Service is part of the Meridian Demo Platform. Customer Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Customer Service.
+
+Customer Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Customer Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Customer Service is governed by the Customer Service Runbook. Customer Team manages the Customer Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Customer Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Customer Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Customer Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Customer Service uses Memcached. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to MySQL. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Customer Team reviews the operational dependencies of Customer Service. The direct dependency named in this chapter is Identity Service. Other services may depend on Customer Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Customer Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Customer Team manages Customer Service; Customer Service uses Memcached for caching; Memcached is hosted on AWS EC2; Customer Service stores transactional records in MySQL; and Customer Service depends on Identity Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 3: ANALYTICS SERVICE
+
+Analytics Team manages Analytics Service. Analytics Service uses Neo4j for caching. Neo4j is hosted on AWS EC2. Analytics Service stores its transactional records in ClickHouse. Analytics Service depends on Event Service.
+
+Analytics Service is part of the Meridian Demo Platform. Analytics Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Analytics Service.
+
+Analytics Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Analytics Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Analytics Service is governed by the Analytics Service Runbook. Analytics Team manages the Analytics Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Analytics Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Analytics Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Analytics Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Analytics Service uses Neo4j. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to ClickHouse. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Analytics Team reviews the operational dependencies of Analytics Service. The direct dependency named in this chapter is Event Service. Other services may depend on Analytics Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Analytics Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Analytics Team manages Analytics Service; Analytics Service uses Neo4j for caching; Neo4j is hosted on AWS EC2; Analytics Service stores transactional records in ClickHouse; and Analytics Service depends on Event Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 4: ORDER SERVICE
+
+Commerce Team manages Order Service. Order Service uses Redis for caching. Redis is hosted on AWS ElastiCache. Order Service stores its transactional records in PostgreSQL. Order Service depends on Inventory Service.
+
+Order Service is part of the Meridian Demo Platform. Commerce Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Order Service.
+
+Order Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Order Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Order Service is governed by the Order Service Runbook. Commerce Team manages the Order Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Order Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Order Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Order Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Order Service uses Redis. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to PostgreSQL. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Commerce Team reviews the operational dependencies of Order Service. The direct dependency named in this chapter is Inventory Service. Other services may depend on Order Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Order Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Commerce Team manages Order Service; Order Service uses Redis for caching; Redis is hosted on AWS ElastiCache; Order Service stores transactional records in PostgreSQL; and Order Service depends on Inventory Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 5: INVENTORY SERVICE
+
+Inventory Team manages Inventory Service. Inventory Service uses Memcached for caching. Memcached is hosted on AWS EC2. Inventory Service stores its transactional records in MongoDB. Inventory Service depends on Supplier Service.
+
+Inventory Service is part of the Meridian Demo Platform. Inventory Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Inventory Service.
+
+Inventory Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Inventory Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Inventory Service is governed by the Inventory Service Runbook. Inventory Team manages the Inventory Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Inventory Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Inventory Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Inventory Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Inventory Service uses Memcached. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to MongoDB. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Inventory Team reviews the operational dependencies of Inventory Service. The direct dependency named in this chapter is Supplier Service. Other services may depend on Inventory Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Inventory Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Inventory Team manages Inventory Service; Inventory Service uses Memcached for caching; Memcached is hosted on AWS EC2; Inventory Service stores transactional records in MongoDB; and Inventory Service depends on Supplier Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 6: IDENTITY SERVICE
+
+Identity Team manages Identity Service. Identity Service uses Redis for caching. Redis is hosted on AWS ElastiCache. Identity Service stores its transactional records in PostgreSQL. Identity Service depends on Notification Service.
+
+Identity Service is part of the Meridian Demo Platform. Identity Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Identity Service.
+
+Identity Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Identity Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Identity Service is governed by the Identity Service Runbook. Identity Team manages the Identity Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Identity Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Identity Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Identity Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Identity Service uses Redis. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to PostgreSQL. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Identity Team reviews the operational dependencies of Identity Service. The direct dependency named in this chapter is Notification Service. Other services may depend on Identity Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Identity Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Identity Team manages Identity Service; Identity Service uses Redis for caching; Redis is hosted on AWS ElastiCache; Identity Service stores transactional records in PostgreSQL; and Identity Service depends on Notification Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 7: NOTIFICATION SERVICE
+
+Messaging Team manages Notification Service. Notification Service uses Redis for caching. Redis is hosted on AWS ElastiCache. Notification Service stores its transactional records in MongoDB. Notification Service depends on Event Service.
+
+Notification Service is part of the Meridian Demo Platform. Messaging Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Notification Service.
+
+Notification Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Notification Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Notification Service is governed by the Notification Service Runbook. Messaging Team manages the Notification Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Notification Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Notification Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Notification Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Notification Service uses Redis. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to MongoDB. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Messaging Team reviews the operational dependencies of Notification Service. The direct dependency named in this chapter is Event Service. Other services may depend on Notification Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Notification Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Messaging Team manages Notification Service; Notification Service uses Redis for caching; Redis is hosted on AWS ElastiCache; Notification Service stores transactional records in MongoDB; and Notification Service depends on Event Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 8: BILLING SERVICE
+
+Finance Team manages Billing Service. Billing Service uses Memcached for caching. Memcached is hosted on AWS EC2. Billing Service stores its transactional records in PostgreSQL. Billing Service depends on Payment Service.
+
+Billing Service is part of the Meridian Demo Platform. Finance Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Billing Service.
+
+Billing Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Billing Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Billing Service is governed by the Billing Service Runbook. Finance Team manages the Billing Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Billing Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Billing Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Billing Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Billing Service uses Memcached. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to PostgreSQL. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Finance Team reviews the operational dependencies of Billing Service. The direct dependency named in this chapter is Payment Service. Other services may depend on Billing Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Billing Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Finance Team manages Billing Service; Billing Service uses Memcached for caching; Memcached is hosted on AWS EC2; Billing Service stores transactional records in PostgreSQL; and Billing Service depends on Payment Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 9: EVENT SERVICE
+
+Integration Team manages Event Service. Event Service uses Redis for caching. Redis is hosted on AWS ElastiCache. Event Service stores its transactional records in MongoDB. Event Service depends on Order Service.
+
+Event Service is part of the Meridian Demo Platform. Integration Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Event Service.
+
+Event Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Event Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Event Service is governed by the Event Service Runbook. Integration Team manages the Event Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Event Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Event Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Event Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Event Service uses Redis. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to MongoDB. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Integration Team reviews the operational dependencies of Event Service. The direct dependency named in this chapter is Order Service. Other services may depend on Event Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Event Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Integration Team manages Event Service; Event Service uses Redis for caching; Redis is hosted on AWS ElastiCache; Event Service stores transactional records in MongoDB; and Event Service depends on Order Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 10: SUPPLIER SERVICE
+
+Supply Team manages Supplier Service. Supplier Service uses Memcached for caching. Memcached is hosted on AWS EC2. Supplier Service stores its transactional records in MySQL. Supplier Service depends on Notification Service.
+
+Supplier Service is part of the Meridian Demo Platform. Supply Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Supplier Service.
+
+Supplier Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Supplier Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Supplier Service is governed by the Supplier Service Runbook. Supply Team manages the Supplier Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Supplier Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Supplier Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Supplier Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Supplier Service uses Memcached. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to MySQL. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Supply Team reviews the operational dependencies of Supplier Service. The direct dependency named in this chapter is Notification Service. Other services may depend on Supplier Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Supplier Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Supply Team manages Supplier Service; Supplier Service uses Memcached for caching; Memcached is hosted on AWS EC2; Supplier Service stores transactional records in MySQL; and Supplier Service depends on Notification Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 11: SEARCH SERVICE
+
+Search Team manages Search Service. Search Service uses Redis for caching. Redis is hosted on AWS ElastiCache. Search Service stores its transactional records in Elasticsearch. Search Service depends on Inventory Service.
+
+Search Service is part of the Meridian Demo Platform. Search Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Search Service.
+
+Search Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Search Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Search Service is governed by the Search Service Runbook. Search Team manages the Search Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Search Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Search Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Search Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Search Service uses Redis. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to Elasticsearch. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Search Team reviews the operational dependencies of Search Service. The direct dependency named in this chapter is Inventory Service. Other services may depend on Search Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Search Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Search Team manages Search Service; Search Service uses Redis for caching; Redis is hosted on AWS ElastiCache; Search Service stores transactional records in Elasticsearch; and Search Service depends on Inventory Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+CHAPTER 12: FRAUD SERVICE
+
+Risk Team manages Fraud Service. Fraud Service uses Redis for caching. Redis is hosted on AWS ElastiCache. Fraud Service stores its transactional records in PostgreSQL. Fraud Service depends on Payment Service.
+
+Fraud Service is part of the Meridian Demo Platform. Risk Team works on the Meridian Demo Platform. The Architecture Council manages the Meridian Demo Platform. The Meridian Demo Platform is located in the Demo Europe Region. These statements describe administrative membership and location, not an inferred hosting arrangement for Fraud Service.
+
+Fraud Service uses OpenTelemetry for instrumentation. OpenTelemetry is part of the Observability Toolkit. The Observability Toolkit is managed by Reliability Team. Reliability Team manages Monitoring Service. Monitoring Service uses Prometheus. Prometheus is hosted on Kubernetes Cluster. Kubernetes Cluster is hosted on AWS EKS.
+
+Fraud Service uses Apache Kafka to publish change events. Apache Kafka is hosted on Amazon MSK. Integration Team manages Event Service. Event Service uses Apache Kafka. A published event includes a synthetic record identifier and an event category. This handbook contains no actual customer event payloads.
+
+Fraud Service is governed by the Fraud Service Runbook. Risk Team manages the Fraud Service Runbook. The runbook is part of Operations Handbook. Operations Handbook is managed by Reliability Team. Before changing cache settings, the fictional runbook requires review of the stored data lifetime and invalidation behavior. No specific numerical latency target or guarantee is defined here.
+
+Fraud Service uses Feature Flag Service. Feature Flag Service depends on Configuration Service. Configuration Service uses PostgreSQL. Platform Team manages Configuration Service. Feature Flag Service is part of the Release Toolkit. The Release Toolkit is managed by Delivery Team. A release flag controls application behavior; it is not a substitute for identity checks.
+
+Fraud Service uses Audit Service for change auditing. Audit Service stores audit events in PostgreSQL. Security Team manages Audit Service. Audit Service depends on Archive Service. Archive Service uses Amazon S3. Amazon S3 is part of AWS. The audit path records fictional change categories; no secret configuration values are included in this test document.
+
+Fraud Service uses Documentation Service to link operational references. Documentation Service stores reference metadata in PostgreSQL. Documentation Service is managed by Enablement Team. Enablement Team works on Developer Portal. Developer Portal depends on Documentation Service. A reference describes a documented fact rather than creating a new relationship by inference.
+
+The caching arrangement for Fraud Service uses Redis. The cache supports repeated reads and temporary lookup results in this fictional design. Persistent transactional records belong to PostgreSQL. Cache membership must not be confused with persistent storage ownership. This distinction helps test whether a question about a caching solution retrieves the appropriate passage rather than a database paragraph.
+
+Risk Team reviews the operational dependencies of Fraud Service. The direct dependency named in this chapter is Payment Service. Other services may depend on Fraud Service; those reverse relationships must be read from their own chapters. A dependency does not automatically mean that one service manages, owns, or hosts another service.
+
+The supporting operational documentation for Fraud Service includes incident categories, change review, instrumentation and source references. There is no real incident history here. Any question asking for a founder, executive identity, production password, measured response time or deployment date cannot be answered from this handbook unless an explicit statement appears elsewhere.
+
+Chapter summary: Risk Team manages Fraud Service; Fraud Service uses Redis for caching; Redis is hosted on AWS ElastiCache; Fraud Service stores transactional records in PostgreSQL; and Fraud Service depends on Payment Service. The other paragraphs supply observability, release, audit and documentation chains as complementary evidence.
+
+APPENDIX: DISTINCT THREE-HOP EXAMPLE
+
+Research Team manages Experiment Service. Experiment Service uses Hazelcast for caching. Hazelcast is hosted on Azure Virtual Machines. Experiment Service stores study configuration in PostgreSQL. Research Team works on Research Workspace. Research Workspace is part of the Meridian Demo Platform.
+
+This chain uses a distinct cache/host pair so an answer about Research Team should not substitute the Redis/AWS ElastiCache arrangement from Payment Service. The founder of Experiment Service is not documented.

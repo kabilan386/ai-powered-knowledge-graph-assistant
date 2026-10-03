@@ -1,0 +1,1 @@
+Customer Service stores transactional data in PostgreSQL.

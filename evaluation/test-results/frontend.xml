@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="26" failures="0" errors="0" time="0.977726671">
+    <testsuite name="tests/api.test.ts" timestamp="2026-10-03T07:14:36.538Z" hostname="kabidev-ASUS-TUF-Gaming-F17-FX706HF-FX706HF" tests="7" failures="0" errors="0" skipped="0" time="0.01580799">
+        <testcase classname="tests/api.test.ts" name="API client &gt; sends the question to the configured backend" time="0.005192857">
+        </testcase>
+        <testcase classname="tests/api.test.ts" name="API client &gt; loads the graph and preserves error messages" time="0.002432953">
+        </testcase>
+        <testcase classname="tests/api.test.ts" name="API client &gt; handles validation, network, and non-JSON responses" time="0.002221293">
+        </testcase>
+        <testcase classname="tests/api.test.ts" name="API client &gt; requires a safe configured URL" time="0.000520546">
+        </testcase>
+        <testcase classname="tests/api.test.ts" name="API client &gt; preserves caller cancellation" time="0.000945907">
+        </testcase>
+        <testcase classname="tests/api.test.ts" name="API client &gt; uploads multipart data and reports actual transfer completion" time="0.001810939">
+        </testcase>
+        <testcase classname="tests/api.test.ts" name="API client &gt; reports upload transport failure without returning document metadata" time="0.001259622">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/chat.test.tsx" timestamp="2026-10-03T07:14:36.540Z" hostname="kabidev-ASUS-TUF-Gaming-F17-FX706HF-FX706HF" tests="5" failures="0" errors="0" skipped="0" time="0.471745769">
+        <testcase classname="tests/chat.test.tsx" name="GraphRAG chat &gt; submits a question and renders its answer and source" time="0.361356648">
+        </testcase>
+        <testcase classname="tests/chat.test.tsx" name="GraphRAG chat &gt; shows loading and an API failure without a fake answer" time="0.083282127">
+        </testcase>
+        <testcase classname="tests/chat.test.tsx" name="GraphRAG chat &gt; shows insufficient evidence and no fabricated citations" time="0.003331582">
+        </testcase>
+        <testcase classname="tests/chat.test.tsx" name="GraphRAG chat &gt; does not turn unknown citations into links or interpret evidence as HTML" time="0.004706">
+        </testcase>
+        <testcase classname="tests/chat.test.tsx" name="GraphRAG chat &gt; distinguishes graph evidence without inventing a document" time="0.017754569">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/documents.test.tsx" timestamp="2026-10-03T07:14:36.541Z" hostname="kabidev-ASUS-TUF-Gaming-F17-FX706HF-FX706HF" tests="9" failures="0" errors="0" skipped="0" time="0.285880672">
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; accepts supported file.pdf" time="0.001968924">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; accepts supported file.DOCX" time="0.00029891">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; accepts supported file.txt" time="0.000192775">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; rejects unsupported, empty, and oversized documents" time="0.000392123">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; uploads and displays actual processing status" time="0.126088494">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; shows backend failure and retains the selected file" time="0.054331113">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; validates dropped files and handles empty files" time="0.01636253">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; shows pending processing without percentages" time="0.054782302">
+        </testcase>
+        <testcase classname="tests/documents.test.tsx" name="Document upload &gt; renders empty and partial session history honestly" time="0.03001647">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/graph.test.tsx" timestamp="2026-10-03T07:14:36.541Z" hostname="kabidev-ASUS-TUF-Gaming-F17-FX706HF-FX706HF" tests="5" failures="0" errors="0" skipped="0" time="0.20429224">
+        <testcase classname="tests/graph.test.tsx" name="Knowledge graph &gt; maps actual nodes, directions, colors and edge labels" time="0.002804873">
+        </testcase>
+        <testcase classname="tests/graph.test.tsx" name="Knowledge graph &gt; deduplicates IDs and omits dangling edges without inventing nodes" time="0.000402131">
+        </testcase>
+        <testcase classname="tests/graph.test.tsx" name="Knowledge graph &gt; loads real response nodes and displays node details" time="0.121134392">
+        </testcase>
+        <testcase classname="tests/graph.test.tsx" name="Knowledge graph &gt; shows empty graph state and error retry" time="0.063648105">
+        </testcase>
+        <testcase classname="tests/graph.test.tsx" name="Knowledge graph &gt; communicates bounded snapshots" time="0.014997932">
+        </testcase>
+    </testsuite>
+</testsuites>

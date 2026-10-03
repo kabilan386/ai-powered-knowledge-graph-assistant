@@ -1,0 +1,1 @@
+Payment Service uses Redis for caching.

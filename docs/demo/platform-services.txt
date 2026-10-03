@@ -1,0 +1,9 @@
+Platform Team manages Payment Service.
+Payment Service uses Redis for caching.
+Redis is hosted on AWS ElastiCache.
+Payment Service depends on PostgreSQL.
+Customer Service stores transactional data in PostgreSQL.
+Analytics Team manages Analytics Service.
+Analytics Service uses Neo4j.
+
+This is synthetic MCA demonstration data. The services and teams are fictional.

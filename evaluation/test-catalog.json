@@ -1,0 +1,114 @@
+[
+  {
+    "match": "test_security",
+    "module": "Security / Request validation",
+    "scenario": "Bound request transport before parsing and reject filename controls",
+    "input": "Declared/streamed oversized bodies, invalid lengths, accepted replay, control-character filenames",
+    "expected": "413/400 before parser, valid bytes unchanged, sanitized filenames and file cleanup"
+  },
+  {
+    "match": "test_real_evaluation_upload_to_answer",
+    "module": "E2E / Evaluation",
+    "scenario": "Upload corpus through real ingestion and compare both RAG modes",
+    "input": "Six TXT documents, mocked AI, actual Neo4j, three-hop question",
+    "expected": "Chunks, embeddings, entities, directed facts, three-hop path, and verified citations; both evaluation modes recorded"
+  },
+  {
+    "match": "test_real_upload_hybrid_answer",
+    "module": "E2E / GraphRAG",
+    "scenario": "Real upload-to-answer and insufficient-evidence pipeline",
+    "input": "Three-page PDF, mocked providers, three-hop and CEO questions",
+    "expected": "Actual Neo4j chunks/graph/vectors and valid source citations; unsupported CEO answer marked insufficient"
+  },
+  {
+    "match": "test_ingestion",
+    "module": "Text extraction / Chunking",
+    "scenario": "Validate extraction and chunking behavior",
+    "input": "PDF, DOCX, TXT and invalid/empty fixture inputs",
+    "expected": "Correct extraction/metadata/chunk boundaries or explicit rejection"
+  },
+  {
+    "match": "test_upload_api",
+    "module": "Upload API",
+    "scenario": "Upload validation and error handling",
+    "input": "Multipart supported, unsupported, empty, and oversized files",
+    "expected": "Correct upload response or sanitized validation/storage error"
+  },
+  {
+    "match": "test_entity_extraction",
+    "module": "Entity extraction",
+    "scenario": "Structured extraction and normalization",
+    "input": "Mock structured responses and grounding/type violations",
+    "expected": "Schema/grounding validation, canonical names, stable mapping, bounded failures"
+  },
+  {
+    "match": "test_graph_ingestion",
+    "module": "Knowledge graph ingestion",
+    "scenario": "Graph writes and retry states",
+    "input": "Validated per-chunk entities/relationships and provider errors",
+    "expected": "Explicit statuses, atomic chunk writes, retry/idempotency rules"
+  },
+  {
+    "match": "test_embeddings",
+    "module": "Embeddings",
+    "scenario": "Embedding validation and provider failures",
+    "input": "Mock vectors, dimension mismatch, nonfinite data, API failures",
+    "expected": "Validated finite dimension-matching vectors or bounded sanitized failure"
+  },
+  {
+    "match": "test_vector_retrieval",
+    "module": "Vector retrieval",
+    "scenario": "Search mapping and source metadata",
+    "input": "Mock Neo4j index/results and request bounds",
+    "expected": "Bounded source-preserving results, compatibility checks, explicit errors"
+  },
+  {
+    "match": "test_graph_retrieval",
+    "module": "Graph retrieval",
+    "scenario": "Resolve anchors and bounded paths",
+    "input": "One-/two-/three-hop fixtures, cycles, missing anchors, limits",
+    "expected": "Read-only typed paths, correct direction/provenance, excluded infrastructure/cycles"
+  },
+  {
+    "match": "test_graphrag",
+    "module": "Context fusion / Grounded answers",
+    "scenario": "Hybrid evidence and citation behavior",
+    "input": "Vector/graph fixtures and mocked answer responses",
+    "expected": "Deduplicated bounded context, valid citations, insufficient evidence and explicit failures"
+  },
+  {
+    "match": "test_evaluation",
+    "module": "Evaluation framework",
+    "scenario": "Validate evaluation models, metrics, reports and failures",
+    "input": "Annotated/unannotated ground truth, scripted fixtures and malformed responses",
+    "expected": "Deterministic metrics with N/A semantics, fair isolated baseline, actual measurements and reports"
+  },
+  {
+    "match": "documents.test",
+    "module": "Frontend upload",
+    "scenario": "Validate and submit uploads; show statuses/errors",
+    "input": "Mock upload requests and PDF/DOCX/TXT/invalid files",
+    "expected": "Correct validation/loading/status/session/error UI without fake success"
+  },
+  {
+    "match": "chat.test",
+    "module": "Frontend chat/citations",
+    "scenario": "Submit question and inspect grounded answer sources",
+    "input": "Mock backend answer, citations, insufficiency, and provider failure",
+    "expected": "Backend-provided citations only; accurate loading, sources, insufficient/error states"
+  },
+  {
+    "match": "graph.test",
+    "module": "Frontend graph",
+    "scenario": "Transform graph data and select entities",
+    "input": "Mock graph response, empty data, failures, refresh",
+    "expected": "Preserved direction and labels, no invented/dangling nodes, details and retry states"
+  },
+  {
+    "match": "api.test",
+    "module": "Frontend API",
+    "scenario": "Backend configuration, request and error contracts",
+    "input": "Mock HTTP/XHR requests, failures and cancellation",
+    "expected": "Configured URLs, JSON/multipart submission, actual transfer stage and explicit errors"
+  }
+]

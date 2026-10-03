@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "name": "MCA platform services evaluation",
+  "description": "Eight small annotated cases over evaluation/corpus. Live data must match these source files. Scripted mock mode tests the harness; it does not measure real AI quality.",
+  "cases": [
+    {
+      "id": "Q001",
+      "question": "What technology does Payment Service use?",
+      "question_type": "factual",
+      "expected_answer": "Redis",
+      "expected_entities": [
+        "Redis"
+      ],
+      "expected_anchors": [
+        "Payment Service"
+      ],
+      "expected_sources": [
+        {
+          "filename": "02-payment-cache.txt",
+          "quote": "Payment Service uses Redis for caching."
+        }
+      ],
+      "sources_complete": true,
+      "expected_path": [
+        {
+          "source": "Payment Service",
+          "type": "USES",
+          "target": "Redis"
+        }
+      ],
+      "expected_insufficient_evidence": false
+    },
+    {
+      "id": "Q002",
+      "question": "What caching solution is used by the payment application?",
+      "question_type": "semantic",
+      "expected_answer": "Redis",
+      "expected_entities": [
+        "Redis"
+      ],
+      "expected_anchors": [],
+      "expected_sources": [
+        {
+          "filename": "02-payment-cache.txt",
+          "quote": "Payment Service uses Redis for caching."
+        }
+      ],
+      "sources_complete": true,
+      "expected_path": [],
+      "expected_insufficient_evidence": false
+    },
+    {
+      "id": "Q003",
+      "question": "Which service is managed by Platform Team?",
+      "question_type": "relationship",
+      "expected_answer": "Payment Service",
+      "expected_entities": [
+        "Payment Service"
+      ],
+      "expected_anchors": [
+        "Platform Team"
+      ],
+      "expected_sources": [
+        {
+          "filename": "01-platform-management.txt",
+          "quote": "Platform Team manages Payment Service."
+        }
+      ],
+      "sources_complete": true,
+      "expected_path": [
+        {
+          "source": "Platform Team",
+          "type": "MANAGES",
+          "target": "Payment Service"
+        }
+      ],
+      "expected_insufficient_evidence": false
+    },
+    {
+      "id": "Q004",
+      "question": "What technology is used by the service managed by Platform Team?",
+      "question_type": "multi_hop",
+      "expected_answer": "Redis",
+      "expected_entities": [
+        "Redis"
+      ],
+      "expected_anchors": [
+        "Platform Team"
+      ],
+      "expected_sources": [
+        {
+          "filename": "01-platform-management.txt",
+          "quote": "Platform Team manages Payment Service."
+        },
+        {
+          "filename": "02-payment-cache.txt",
+          "quote": "Payment Service uses Redis for caching."
+        }
+      ],
+      "sources_complete": true,
+      "expected_path": [
+        {
+          "source": "Platform Team",
+          "type": "MANAGES",
+          "target": "Payment Service"
+        },
+        {
+          "source": "Payment Service",
+          "type": "USES",
+          "target": "Redis"
+        }
+      ],
+      "expected_insufficient_evidence": false
+    },
+    {
+      "id": "Q005",
+      "question": "Which cloud service hosts the technology used by the service managed by Platform Team?",
+      "question_type": "multi_hop",
+      "expected_answer": "AWS ElastiCache",
+      "expected_entities": [
+        "AWS ElastiCache"
+      ],
+      "expected_anchors": [
+        "Platform Team"
+      ],
+      "expected_sources": [
+        {
+          "filename": "01-platform-management.txt",
+          "quote": "Platform Team manages Payment Service."
+        },
+        {
+          "filename": "02-payment-cache.txt",
+          "quote": "Payment Service uses Redis for caching."
+        },
+        {
+          "filename": "03-redis-hosting.txt",
+          "quote": "Redis is hosted on AWS ElastiCache."
+        }
+      ],
+      "sources_complete": true,
+      "expected_path": [
+        {
+          "source": "Platform Team",
+          "type": "MANAGES",
+          "target": "Payment Service"
+        },
+        {
+          "source": "Payment Service",
+          "type": "USES",
+          "target": "Redis"
+        },
+        {
+          "source": "Redis",
+          "type": "HOSTED_ON",
+          "target": "AWS ElastiCache"
+        }
+      ],
+      "expected_insufficient_evidence": false
+    },
+    {
+      "id": "Q006",
+      "question": "Who founded Payment Service?",
+      "question_type": "insufficient_evidence",
+      "expected_answer": null,
+      "expected_entities": [],
+      "expected_anchors": [
+        "Payment Service"
+      ],
+      "expected_sources": [],
+      "sources_complete": false,
+      "expected_path": [],
+      "expected_insufficient_evidence": true
+    },
+    {
+      "id": "Q007",
+      "question": "Where does Customer Service store transactional data?",
+      "question_type": "factual",
+      "expected_answer": "PostgreSQL",
+      "expected_entities": [
+        "PostgreSQL"
+      ],
+      "expected_anchors": [
+        "Customer Service"
+      ],
+      "expected_sources": [
+        {
+          "filename": "04-customer-storage.txt",
+          "quote": "Customer Service stores transactional data in PostgreSQL."
+        }
+      ],
+      "sources_complete": true,
+      "expected_path": [],
+      "expected_insufficient_evidence": false
+    },
+    {
+      "id": "Q008",
+      "question": "What technology does Analytics Service use?",
+      "question_type": "relationship",
+      "expected_answer": "Neo4j",
+      "expected_entities": [
+        "Neo4j"
+      ],
+      "expected_anchors": [
+        "Analytics Service"
+      ],
+      "expected_sources": [
+        {
+          "filename": "06-analytics-technology.txt",
+          "quote": "Analytics Service uses Neo4j."
+        }
+      ],
+      "sources_complete": true,
+      "expected_path": [
+        {
+          "source": "Analytics Service",
+          "type": "USES",
+          "target": "Neo4j"
+        }
+      ],
+      "expected_insufficient_evidence": false
+    }
+  ]
+}
