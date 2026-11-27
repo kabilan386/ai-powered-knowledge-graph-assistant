@@ -207,3 +207,7 @@ No auth/tenant isolation, rate limiting, TLS ingress, durable ingestion workers,
 Potential future work includes OCR, durable job/status infrastructure, alias resolution, independently annotated larger live evaluation, auth/quotas, backup/restore operations and public ingress controls. These are not implemented features. Milestone 9 is the final authorized milestone.
 
 [Demo document and procedure](docs/demo.md) · [API reference](docs/api.md) · [Architecture](docs/architecture.md) · [MCA report material](docs/mca/01-system-design.md) · [Detailed implementation/recovery reference](docs/implementation-guide.md)
+
+## 25. Viva presentation
+
+The project viva deck is available as [PowerPoint](presentations/GraphRAG_Project_Viva_Template.pptx) and [PDF](presentations/GraphRAG_Project_Viva_Template.pdf). The deck follows the supplied SRM template and includes the project architecture, Neo4j data model, screenshots, and evaluation limitations.
